@@ -1,5 +1,14 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  assetsInclude: ['**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.tga', '**/*.hdr'],
+  base: process.env.NODE_ENV === "production" ? "/interactive-camping-babylonjs/" : "/",
+  assetsInclude: [
+    "**/*.jpg",
+    "**/*.png",
+    "**/*.jpeg",
+    "**/*.gif",
+    "**/*.svg",
+    "**/*.tga",
+    "**/*.hdr",
+  ],
 });
