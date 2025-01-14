@@ -21,7 +21,7 @@ light.intensity = 0.8;
 //Ground
 const ground = MeshBuilder.CreateGround("ground", { width: 100, height: 100 }, scene);
 const groundMaterial = new StandardMaterial("groundMaterial", scene);
-const groundTexture = new Texture("/assets/forest-ground-1024x1024.png", scene);
+const groundTexture = new Texture("./assets/forest-ground-1024x1024.png", scene);
 groundMaterial.diffuseTexture = groundTexture;
 groundTexture.uScale = 10; // Tile texture
 groundTexture.vScale = 10;
@@ -50,7 +50,7 @@ const skybox = MeshBuilder.CreateBox("skyBox", { size: 1000.0, sideOrientation: 
 const skyboxMaterial = new StandardMaterial("skyBoxMaterial", scene);
 skyboxMaterial.backFaceCulling = false;
 
-const skyboxTexture = new Texture("/assets/Rome_past_High.png", scene);
+const skyboxTexture = new Texture("./assets/Rome_past_High.png", scene);
 skyboxMaterial.reflectionTexture = skyboxTexture;
 skyboxMaterial.reflectionTexture.coordinatesMode = Texture.EQUIRECTANGULAR_MODE;
 skyboxMaterial.disableLighting = true;
