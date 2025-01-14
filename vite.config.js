@@ -1,7 +1,10 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? "/interactive-camping-babylonjs/" : "/",
+  base:
+    process.env.NODE_ENV === "production"
+      ? "/interactive-camping-babylonjs/"
+      : "/",
   assetsInclude: [
     "**/*.jpg",
     "**/*.png",
@@ -11,4 +14,7 @@ export default defineConfig({
     "**/*.tga",
     "**/*.hdr",
   ],
+  build: {
+    target: "esnext", // Ensure top-level await support
+  },
 });
