@@ -6,11 +6,17 @@ import { Texture } from "@babylonjs/core/Materials/Textures";
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { Color3 } from "@babylonjs/core/Maths/math";
 
-
 const canvas = document.getElementById("app") as HTMLCanvasElement;
 const engine = new Engine(canvas, true);
 const scene = new Scene(engine);
 //const xrHelper = await scene.createDefaultXRExperienceAsync();
+
+const xr = await scene.createDefaultXRExperienceAsync({
+  disableDefaultUI: false, // Enables the default VR/AR UI
+  disableTeleportation: true, // Optional: Disable teleportation
+});
+
+
 const camera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 10, new Vector3(0, 0, 0), scene);
 camera.attachControl(canvas, true);
 camera.lowerRadiusLimit = camera.upperRadiusLimit = 10; // Lock distance from the center
