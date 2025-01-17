@@ -17,7 +17,7 @@ const createScene = async function (): Promise<Scene>
   const scene = new Scene(engine);
 
   // Camera
-  const camera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 10, new Vector3(0, 0, 0), scene);
+  const camera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 5, new Vector3(0, 0, 0), scene);
   camera.attachControl(canvas, true);
   camera.lowerRadiusLimit = camera.upperRadiusLimit = 10; // Lock distance from the center
 
