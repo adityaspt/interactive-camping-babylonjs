@@ -58,9 +58,15 @@ const createScene = async function (): Promise<Scene>
     floorMeshes: [ground],
     optionalFeatures: true,
     //disableDefaultUI: false,
-    //disableTeleportation: true,
+    disableTeleportation: true,
   });
 
+  //Set camera to a seated position
+  xr.baseExperience.camera.position = new Vector3(0, 1.5, 0);
+
+  //Disable movement in VR
+  xr.input.xrCamera.checkCollisions = false; //Prevent Collisions
+ 
   return scene;
 };
 
