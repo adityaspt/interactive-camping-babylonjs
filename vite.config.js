@@ -17,4 +17,12 @@ export default defineConfig({
   build: {
     target: "esnext", // Ensure top-level await support
   },
+  server: {
+    https: {
+      key: "./key.pem", 
+      cert: "./cert.pem", 
+    },
+    host: "0.0.0.0", // Allow access from other devices (like Quest 2)
+    port: 3000, // Replace with your preferred port
+  },
 });
